@@ -2,8 +2,8 @@
 ### find()
 ### with 
 
-### Standard Output Method
-import hxh_stdout
+### Chi Jiu Hua Shu Ju
+import pickle
 
 man = []
 other = []
@@ -27,10 +27,10 @@ except IOError:
 
 ### Write To File
 try:
-    with open('man_data.txt','w') as man_file, open('other_data.txt','w') as other_file:
-        hxh_stdout.StandardOutputMethod(man, fh=man_file)
-        hxh_stdout.StandardOutputMethod(other, fh=other_file)
-        #print(man, file = man_file)
-        #print(other, file = other_file)
+    with open('man_data.txt','wb') as man_file, open('other_data.txt','wb') as other_file:
+        pickle.dump(man, man_file)
+        pickle.dump(other, other_file)
 except IOError:
     print('File Error.')
+except pickle.PickleError as perr:
+    print('Pickle Error:' + str(perr))
