@@ -1,3 +1,6 @@
+# coding=utf-8
+#!/usr/local/bin/python3
+
 ### 用Python构建一个Web服务器必须有下面这5行代码 ###
 
 # 导入Http服务器和CGI模块

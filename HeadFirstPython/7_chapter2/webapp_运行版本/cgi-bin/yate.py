@@ -1,3 +1,4 @@
+
 from string import Template
 
 def start_response(resp="text/html"):
