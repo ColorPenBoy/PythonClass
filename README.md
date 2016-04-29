@@ -113,8 +113,26 @@ map的作用，把func作用在list的每一个元素上
 
 * 装饰器 -> 这种在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）。本质上，decorator就是一个返回函数的高阶函数
 
+* 偏函数
+
+当函数的参数个数太多，需要简化时，使用```functools.partial```可以创建一个新的函数，这个新函数可以固定住原函数的部分参数，从而在调用时更简单
+
+```functools.partial```就是帮助我们创建一个偏函数的，不需要我们自己定义（P.S -> 在函数外嵌套一个函数，写死某些特定参数）
 
 
+####面向对象
 
+和静态语言不同，Python允许对实例变量绑定任何数据，也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：
 
+```
+>>> bart = Student('Bart Simpson', 59)
+>>> lisa = Student('Lisa Simpson', 87)
+>>> bart.age = 8
+>>> bart.age
+8
+>>> lisa.age
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'age'
+```
 
