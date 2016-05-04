@@ -136,3 +136,44 @@ Traceback (most recent call last):
 AttributeError: 'Student' object has no attribute 'age'
 ```
 
+####多重继承、定制类、元类
+Python是动态语言，随时可以给Class中添加属性，但是使用```__slots__```可以限制除规定属性外，其它属性的添加。
+
+```__slots__```定义的属性仅对当前类实例起作用，对继承的子类是不起作用。
+
+* 多继承习惯命名在主要类层次外，添加其它继承时给父类类名后加上'MixIn'
+
+* 定制类 ->> 自己重写__init__、__str__、__next__、__iter__等方法。
+
+* 使用类Class可以创建出实例Instance，使用元类metaClass可以创建出类Class
+
+
+####错误处理
+抛出异常：
+
+```
+try:
+
+except:
+
+finally:
+```
+断言：
+
+```
+// 如果n == 0，抛出异常
+assert n != 0, 'n is Zero!' 
+```
+
+
+```logging```的好处，它允许你指定记录信息的级别，有```debug，info，warning，error```等几个级别，当指定```level=INFO```时，```logging.debug```就不起作用了。
+
+指定```level=WARNING```后，```debug```和```info```就不起作用了。可以放心地输出不同级别的信息，也不用删除，最后统一控制输出哪个级别的信息。
+
+```logging```的另一个好处是通过简单的配置，一条语句可以同时输出到不同的地方，比如```console```和文件。
+
+###单元测试
+单元测试是用来对一个模块、一个函数或者一个类来进行正确性检验的测试工作。
+
+
+
