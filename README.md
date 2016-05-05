@@ -175,5 +175,45 @@ assert n != 0, 'n is Zero!'
 ###单元测试
 单元测试是用来对一个模块、一个函数或者一个类来进行正确性检验的测试工作。
 
+###IO编程
+使用异步IO来编写程序性能会远远高于同步IO，但是异步IO的缺点是编程模型复杂。想想看，你得知道什么时候通知你“汉堡做好了”，而通知你的方法也各不相同。如果是服务员跑过来找到你，这是回调模式，如果服务员发短信通知你，你就得不停地检查手机，这是轮询模式。
 
+###常用内建库
+ * datetime是Python处理日期和时间的标准库。
+ * collections是Python内建的一个集合模块，提供了许多有用的集合类。
+ * Base64是一种用64个字符来表示任意二进制数据的方法。
+ * Python提供了一个struct模块来解决bytes和其他二进制数据类型的转换。
+ * Python的hashlib提供了常见的摘要算法，如MD5，SHA1等等。
+ * Python的内建模块itertools提供了非常有用的用于操作迭代对象的函数。
+ * Python提供了HTMLParser来非常方便地解析HTML。
+ * urllib提供了一系列用于操作URL的功能。
+
+###强大的第三方库
+PIL：Python Imaging Library，已经是Python平台事实上的图像处理标准库了。PIL功能非常强大，但API却非常简单易用。
+
+由于PIL仅支持到Python 2.7，加上年久失修，于是一群志愿者在PIL的基础上创建了兼容的版本，名字叫Pillow，支持最新Python 3.x，又加入了许多新特性，因此，我们可以直接安装使用Pillow。
+
+
+###virtualenv
+在开发Python应用程序的时候，系统安装的Python3只有一个版本：3.4。所有第三方的包都会被pip安装到Python3的site-packages目录下。
+
+如果我们要同时开发多个应用程序，那这些应用程序都会共用一个Python，就是安装在系统的Python 3。如果应用A需要jinja 2.7，而应用B需要jinja 2.6怎么办？
+
+这种情况下，每个应用可能需要各自拥有一套“独立”的Python运行环境。virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境。
+
+virtualenv为应用提供了隔离的Python运行环境，解决了不同应用间多版本的冲突问题。
+
+* 创建一个独立的Python运行环境
+
+	```$ virtualenv --no-site-packages venv```
+
+
+* 进入所创建的Python环境
+
+	```$ source venv/bin/activate```
+
+* 退出创建的Python环境
+
+	```$ deactivate ```
+	
 
